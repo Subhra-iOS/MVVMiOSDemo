@@ -48,12 +48,35 @@ extension ViewController : UITableViewDataSource{
 extension ViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
-        
         return 60.0
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        switch editingStyle {
+            case .delete:
+                let model : TableCellViewModel? = self.rootViewModel.dataListArray?[indexPath.row]
+                let status = self.rootViewModel.deleteStatusForViewModel(model: model)
+                if  status.state {
+                    self.dataListTable.beginUpdates()
+                    self.dataListTable.deleteRows(at: [IndexPath(row: status.currentIndex , section: 0)], with: .automatic)
+                    self.dataListTable.endUpdates()
+            }
+                
+            case .insert : break
+            default : break
+        }
+        
+    }
+    
 }
 
 extension  ViewController : RootViewModelProtocol{
+    
+    func didFinishInsertItemsWith(model: TableCellViewModel?) {
+        
+    }
+    
     func didFinishLoadingErrorWith(error: Error?) {
         print("\(String(describing: error))")
     }

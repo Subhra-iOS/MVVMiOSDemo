@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FinanceModel: Codable {
+class CompanyModel: Codable {
 
     public var title : String?
     public var description : String?
@@ -22,7 +22,7 @@ class FinanceModel: Codable {
     }
 
     deinit {
-        print("FinanceModel dealloc")
+        print("CompanyModel dealloc")
     }
     
 }

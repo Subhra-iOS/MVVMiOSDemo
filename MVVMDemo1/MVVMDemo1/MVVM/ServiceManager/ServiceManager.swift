@@ -29,7 +29,7 @@ extension  ServiceManager{
         do{
             let jsonDecoder = JSONDecoder()
             jsonDecoder.keyDecodingStrategy = .useDefaultKeys
-            let    foodModels  = try jsonDecoder.decode([FinanceModel].self, from: data)
+            let    foodModels  = try jsonDecoder.decode([CompanyModel].self, from: data)
             return foodModels
         }catch let error{
             print("\(error.localizedDescription)")

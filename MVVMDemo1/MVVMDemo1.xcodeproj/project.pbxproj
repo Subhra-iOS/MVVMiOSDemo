@@ -14,7 +14,7 @@
 		2A97CBCA231104D200AF0844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A97CBC8231104D200AF0844 /* LaunchScreen.storyboard */; };
 		2A97CBD72311085300AF0844 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97CBD62311085300AF0844 /* TableViewCell.swift */; };
 		2A97CBD9231109C400AF0844 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97CBD8231109C400AF0844 /* RootViewModel.swift */; };
-		2A97CBDB23110BEB00AF0844 /* FinanceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97CBDA23110BEB00AF0844 /* FinanceModel.swift */; };
+		2A97CBDB23110BEB00AF0844 /* CompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97CBDA23110BEB00AF0844 /* CompanyModel.swift */; };
 		2A97CBDD23111A4F00AF0844 /* TableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97CBDC23111A4F00AF0844 /* TableCellViewModel.swift */; };
 		2A97CBE2231128D800AF0844 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A97CBE1231128D800AF0844 /* ServiceManager.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +29,7 @@
 		2A97CBCB231104D200AF0844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A97CBD62311085300AF0844 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		2A97CBD8231109C400AF0844 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
-		2A97CBDA23110BEB00AF0844 /* FinanceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceModel.swift; sourceTree = "<group>"; };
+		2A97CBDA23110BEB00AF0844 /* CompanyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyModel.swift; sourceTree = "<group>"; };
 		2A97CBDC23111A4F00AF0844 /* TableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellViewModel.swift; sourceTree = "<group>"; };
 		2A97CBE1231128D800AF0844 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +105,7 @@
 		2A97CBD42311081700AF0844 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2A97CBDA23110BEB00AF0844 /* FinanceModel.swift */,
+				2A97CBDA23110BEB00AF0844 /* CompanyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,7 +218,7 @@
 				2A97CBDD23111A4F00AF0844 /* TableCellViewModel.swift in Sources */,
 				2A97CBC2231104D100AF0844 /* ViewController.swift in Sources */,
 				2A97CBD9231109C400AF0844 /* RootViewModel.swift in Sources */,
-				2A97CBDB23110BEB00AF0844 /* FinanceModel.swift in Sources */,
+				2A97CBDB23110BEB00AF0844 /* CompanyModel.swift in Sources */,
 				2A97CBE2231128D800AF0844 /* ServiceManager.swift in Sources */,
 				2A97CBC0231104D100AF0844 /* AppDelegate.swift in Sources */,
 			);
