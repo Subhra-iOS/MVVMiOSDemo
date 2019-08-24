@@ -49,7 +49,7 @@ class RootViewModel: NSObject {
         self.rootDelegate = delegate
     }
 
-    func jsonEncodeWith(array : [[String : String]]) -> String{
+   private func jsonEncodeWith(array : [[String : String]]) -> String{
         
         var jsonString : String?
         let jsonEncoder = JSONEncoder()

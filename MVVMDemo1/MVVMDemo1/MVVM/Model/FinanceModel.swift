@@ -8,12 +8,6 @@
 
 import UIKit
 
-
-//class Companies: Codable {
-//    var companies : [FinanceModel]
-//}
-
-
 class FinanceModel: Codable {
 
     public var title : String?
