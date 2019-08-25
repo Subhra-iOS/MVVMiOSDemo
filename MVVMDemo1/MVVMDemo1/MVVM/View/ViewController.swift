@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     
     let financeArr = [["title" : "ARC", "description" : "A print and tech product base Company"], ["title" : "CTS", "description" : "A service and tech Company"], ["title" : "IBM", "description" : "A service and tech Company"], ["title" : "Accenture", "description" : "A service and tech Company"], ["title" : "Capgemini", "description" : "A service and tech Company"], ["title" : "Google", "description" : "A product b Company"], ["title" : "Microsoft", "description" : "A product based Company"], ["title" : "Apple", "description" : "A product based Company"]]
     
+  //  let resultDict : [String : Any] = ["responseCode" : 200, "result" : [["title" : "ARC", "description" : "A print and tech product base Company"], ["title" : "CTS", "description" : "A service and tech Company"], ["title" : "IBM", "description" : "A service and tech Company"], ["title" : "Accenture", "description" : "A service and tech Company"], ["title" : "Capgemini", "description" : "A service and tech Company"], ["title" : "Google", "description" : "A product b Company"], ["title" : "Microsoft", "description" : "A product based Company"], ["title" : "Apple", "description" : "A product based Company"]]] as!  [String : Any]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

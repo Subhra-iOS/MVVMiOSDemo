@@ -20,6 +20,12 @@ class RootViewModel: NSObject {
     private var dataModels : [CompanyModel]?
     private weak var  rootDelegate : RootViewModelProtocol?
     
+//    func serviceNewCall(response : [String : Any]) -> Void{
+//        
+//        let response = self.jsonEncodeWith(result: response)
+//        
+//    }
+    
     func serviceCallWith(array : [[String : String]]) -> Void{
     
         let arrayStr = self.jsonEncodeWith(array: array)
@@ -56,6 +62,21 @@ class RootViewModel: NSObject {
         let jsonEncoder = JSONEncoder()
         do {
             let jsonData = try jsonEncoder.encode(array)
+            jsonString = String(data: jsonData, encoding: .utf8) ??  ""
+            
+        }
+        catch {
+        }
+        
+        return jsonString!
+    }
+    
+    private func jsonEncodeWith(result : [String : Any]) -> String{
+        
+        var jsonString : String?
+        let jsonEncoder = JSONEncoder()
+        do {
+            let jsonData = try jsonEncoder.encode(result)
             jsonString = String(data: jsonData, encoding: .utf8) ??  ""
             
         }

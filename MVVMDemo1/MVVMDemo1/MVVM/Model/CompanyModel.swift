@@ -8,6 +8,12 @@
 
 import UIKit
 
+
+//class ITCompany : Codable {
+//    public var responseCode : NSNumber?
+//    public var result : [CompanyModel]?
+//}
+
 class CompanyModel: Codable {
 
     public var title : String?
