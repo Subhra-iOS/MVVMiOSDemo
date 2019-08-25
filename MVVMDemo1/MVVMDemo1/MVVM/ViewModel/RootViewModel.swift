@@ -71,20 +71,20 @@ class RootViewModel: NSObject {
         return jsonString!
     }
     
-    private func jsonEncodeWith(result : [String : Any]) -> String{
-        
-        var jsonString : String?
-        let jsonEncoder = JSONEncoder()
-        do {
-            let jsonData = try jsonEncoder.encode(result)
-            jsonString = String(data: jsonData, encoding: .utf8) ??  ""
-            
-        }
-        catch {
-        }
-        
-        return jsonString!
-    }
+//    private func jsonEncodeWith(result : [String : Any]) -> String{
+//        
+//        var jsonString : String?
+//        let jsonEncoder = JSONEncoder()
+//        do {
+//            let jsonData = try jsonEncoder.encode(result)
+//            jsonString = String(data: jsonData, encoding: .utf8) ??  ""
+//            
+//        }
+//        catch {
+//        }
+//        
+//        return jsonString!
+//    }
     
     deinit {
         print("RootViewModel dealloc")
