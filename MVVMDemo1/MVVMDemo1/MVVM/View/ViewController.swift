@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-      //  self.dataListTable.register(UINib(nibName: "TableViewCell", bundle: Bundle.main), forCellReuseIdentifier: cellIdentifier)
         self.rootViewModel.setViewModelDelegateWith(delegate: self)
        //self.rootViewModel.serviceCallWith(array: financeArr)
         self.rootViewModel.serviceNewCall(response: resultDict)
