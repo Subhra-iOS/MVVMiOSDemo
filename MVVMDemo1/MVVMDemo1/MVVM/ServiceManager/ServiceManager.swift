@@ -20,17 +20,40 @@ struct ServiceManager {
         completion(result, nil)
      
     }
+    
+    func fetchDataFromServer( staticData : Data, completion :  @escaping (_ response : Any?, _ error : Error?) -> Void) -> Void{
+        
+        sleep(UInt32(5.0))
+        
+        let  result  =  self.jsonNewConverterWith(data: staticData)
+        print("\(String(describing: result))")
+        completion(result, nil)
+        
+    }
 }
 
 extension  ServiceManager{
+    
+    private func jsonNewConverterWith(data : Data)  -> Any?{
+        
+        do{
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.keyDecodingStrategy = .useDefaultKeys
+            let    companyModels  = try jsonDecoder.decode(ITCompany.self, from: data)
+            return companyModels
+        }catch let error{
+            print("\(error.localizedDescription)")
+        }
+        return nil
+    }
     
     private func jsonConverterWith(data : Data)  -> Any?{
     
         do{
             let jsonDecoder = JSONDecoder()
             jsonDecoder.keyDecodingStrategy = .useDefaultKeys
-            let    foodModels  = try jsonDecoder.decode([CompanyModel].self, from: data)
-            return foodModels
+            let    companyModels  = try jsonDecoder.decode([CompanyModel].self, from: data)
+            return companyModels
         }catch let error{
             print("\(error.localizedDescription)")
         }

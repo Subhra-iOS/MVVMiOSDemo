@@ -20,11 +20,31 @@ class RootViewModel: NSObject {
     private var dataModels : [CompanyModel]?
     private weak var  rootDelegate : RootViewModelProtocol?
     
-//    func serviceNewCall(response : [String : Any]) -> Void{
-//        
-//        let response = self.jsonEncodeWith(result: response)
-//        
-//    }
+    func serviceNewCall(response : [String : Any]) -> Void{
+        
+        let response : Data = try! JSONSerialization.data(withJSONObject: response, options: JSONSerialization.WritingOptions.prettyPrinted)
+        ServiceManager().fetchDataFromServer(staticData: response) {  (data, error) in
+            
+            if let finalData : ITCompany = data as? ITCompany , let responseArr : [CompanyModel] = finalData.result , responseArr.count > 0 {
+                print("\(responseArr)")
+                
+                self.dataModels = responseArr
+                self.dataListArray =  responseArr.map({ (model) -> TableCellViewModel in
+                    return  TableCellViewModel(title: model.title, subTitle: model.description)
+                })
+                
+                print("\(String(describing: self.dataModels))")
+                print("\(String(describing: self.dataListArray))")
+                
+                self.rootDelegate?.didFinishLoadingOfData()
+                
+            }else{
+                self.rootDelegate?.didFinishLoadingErrorWith(error: error)
+            }
+            
+        }
+        
+    }
     
     func serviceCallWith(array : [[String : String]]) -> Void{
     
@@ -72,17 +92,18 @@ class RootViewModel: NSObject {
     }
     
 //    private func jsonEncodeWith(result : [String : Any]) -> String{
-//        
+//
 //        var jsonString : String?
 //        let jsonEncoder = JSONEncoder()
+//        jsonEncoder.outputFormatting = .prettyPrinted
 //        do {
-//            let jsonData = try jsonEncoder.encode(result)
+//
+//            let jsonData = try jsonEncoder.encode(<#T##value: Encodable##Encodable#>)
 //            jsonString = String(data: jsonData, encoding: .utf8) ??  ""
-//            
 //        }
 //        catch {
 //        }
-//        
+//
 //        return jsonString!
 //    }
     

@@ -9,10 +9,39 @@
 import UIKit
 
 
-//class ITCompany : Codable {
-//    public var responseCode : NSNumber?
-//    public var result : [CompanyModel]?
-//}
+class ITCompany :  Codable {
+    public var responseCode : Int
+    public var result : [CompanyModel]?
+    
+   /* private enum CodingKeys: String, CodingKey {
+        case responseCode
+        case result
+    }
+    
+    init(code : Int, resultCollection : [[String : Any]]) {
+        
+        self.responseCode = code
+        self.result = resultCollection.map({ ([String : Any]) -> CompanyModel in
+            
+            
+            
+        })
+    }
+    
+    func decode(from decoder : Decoder) throws{
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        result =  try container.decode(Array.self, forKey: ITCompany.CodingKeys.result)
+        responseCode = try container.decode(Int.self, forKey: ITCompany.CodingKeys.responseCode)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(responseCode, forKey: .responseCode)
+        try container.encodeIfPresent(result, forKey: .result)
+       
+    }*/
+
+}
 
 class CompanyModel: Codable {
 
