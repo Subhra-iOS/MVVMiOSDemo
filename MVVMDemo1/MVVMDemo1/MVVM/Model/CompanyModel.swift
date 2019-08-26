@@ -40,6 +40,10 @@ class ITCompany :  Codable {
         try container.encodeIfPresent(result, forKey: .result)
        
     }*/
+    
+    deinit {
+        print("ITCompany dealloc")
+    }
 
 }
 
@@ -48,6 +52,16 @@ class CompanyModel: Codable {
     public var title : String?
     public var description : String?
 
+    private enum CodingKeys : String, CodingKey{
+        case  title = "company_title"
+        case  description
+    }
+    
+//    func decode(from decoder : Decoder) throws{
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        self.title  =  try container.decode(String.self, forKey: CompanyModel.CodingKeys.title)
+//        self.description = try container.decode(String.self, forKey: CompanyModel.CodingKeys.description)
+//    }
     
     convenience init(title : String?, subTitle : String?){
         self.init()

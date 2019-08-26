@@ -22,6 +22,8 @@ class RootViewModel: NSObject {
     
     func serviceNewCall(response : [String : Any]) -> Void{
         
+        print("\(response)")
+        
         let response : Data = try! JSONSerialization.data(withJSONObject: response, options: JSONSerialization.WritingOptions.prettyPrinted)
         ServiceManager().fetchDataFromServer(staticData: response) {  (data, error) in
             
